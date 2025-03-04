@@ -22,8 +22,15 @@ class _HomeViewState extends State<HomeView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('0', style: TextStyle(fontSize: 24)),
-            ElevatedButton(onPressed: () {}, child: Icon(Icons.add, size: 32)),
+            Text('${data.getCounter()}', style: TextStyle(fontSize: 24)),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  data.increment();
+                });
+              },
+              child: Icon(Icons.add, size: 32),
+            ),
           ],
         ),
       ),
